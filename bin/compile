@@ -10,11 +10,8 @@ source $bp_dir/lib/common.sh
 export_env_dir $env_dir
 cd $build_dir
 
-if [ -f "$1/$WEBPACK_CONF_PATH" ]; then
-  echo "Webpack buildpack"
-  exit 0
-else
-  echo "Can not find $WEBPACK_CONF_PATH"
+if ![ -f "$1/$WEBPACK_CONF_PATH" ]; then
+  echo "Could not find path from WEBPACK_CONF_PATH: $WEBPACK_CONF_PATH"
   exit 1
 fi
 
