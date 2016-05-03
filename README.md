@@ -10,16 +10,16 @@ To use the buildpack:
 
    ```
    https://github.com/heroku/heroku-buildpack-nodejs
-   https://github.com/jerrysu/heroku-buildpack-webpack
+   https://github.com/metrox/heroku-buildpack-webpack
    ```
 
 2. Set the buildpack on heroku
 
   ```bash
-  $ heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi
+  $ heroku buildpacks:set https://github.com/metrox/heroku-buildpack-webpack
   ```
 
-3. Set ```WEBPACK_CONF_PATH``` variable to your webpack.config.js path for example `config/webpack/production.config.js`
+3. Set ```WEBPACK_CONF_PATH``` variable in heroku to your webpack config path for example `webpack.config.js` or `config/webpack/production.config.js`
 
 4. Deploy to Heroku.
 
